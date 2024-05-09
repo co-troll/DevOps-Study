@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id=counter></div>
+    <button id="increment">증가<div>dd</div></button>
+    <button id="decrement">감소</button>
+    <form id="border" action="">
+        <button type="submit">보내기</button>
+    </form>
+</body>
+<script>
+    const _display = document.querySelector("#counter");
+    const incrementBtn = document.querySelector("#increment");
+    const decrementBtn = document.querySelector("#decrement");
+
+    let num = 0;
+    _display.innerHTML = num;
+
+    function handler(e) {
+        _display.innerHTML = e.target.id === "increment" ? ++num : --num; 
+    }
+
+    incrementBtn.onclick = function (e) {
+        // e는 click 이벤트를 전달 받는다.
+        // 버블링 캡쳐링을 막기 위해
+        // stopPropagation 버블링 캡쳐링을 막아준다.
+        e.stopPropagation();
+        // 부모를 클릭했을때 자식 요소까지 이벤트가 발생하는 것을 막아준다.
+        window.location.reload();
+        console.log(e);
+        console.log(e.target);
+        handler(e);
+    }
+
+    decrementBtn.onclick = function (e) {
+        console.log(e);
+        console.log(e.target);
+        handler(e);
+    }
+    border.onsubmit = function (e) {
+        // preventDefault 이벤트의 속성을 제거
+        e.preventDefault();
+        console.log(e);
+    }
+</script>
+</html>

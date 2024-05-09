@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 400px;
+            height: 800px;
+            border: 1px solid;
+            display: flex;
+            flex-direction: column;
+        }
+        .item {
+            width: 100%;
+            height: 100%;
+            background-color: blue;
+        }
+        .box {
+            width: 400px;
+            height: 200px;
+            border: 1px solid red;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <!-- 드래그할 요소 draggable 요소의 드래그 속성을 허용할 것인가? -->
+            <div class="item" draggable="true">1</div>
+        </div>
+        <div class="box">
+            <div class="item" draggable="true">2</div>
+        </div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+</body>
+<script>
+    // 드래그하고 있는 요소를 담을 것
+    let _target = null;
+
+    // document 웹 페이지에서 드래그가 시작되면
+    document.ondragstart = (e) => {
+        // console.log(e.target);
+        if (e.target.classList.contains("item")) {
+            // console.log("item 요소가 드래그됨")
+            _target = e.target;
+            console.dir(_target.value);
+            _target.style.backgroundColor = "red";
+        }
+    }
+    document.ondragend = (e) => {
+        if (e.target.classList.contains("item")) {
+            _target.style.backgroundColor = "blue";
+            _target = null;
+        }
+    }
+    document.ondragenter = (e) => {
+        if (e.target.classList.contains("box") && _target !== null) {
+            e.target.style.backgroundColor = "blue";
+        }
+    }
+    document.ondragleave = (e) => {
+        if (e.target.classList.contains("box") && _target !== null) {
+            e.target.style.backgroundColor = "transparent";
+        }
+    }
+
+    document.ondragover = (e) => {
+        if (e.target.classList.contains("box") && _target !== null) {
+            e.preventDefault();
+        }
+    }
+
+    document.ondrop = (e) => {
+        if (e.target.classList.contains("box") && _target !== null) {
+            e.target.style.backgroundColor = "transparent";
+            e.target.append(_target)
+        }
+    }
+
+
+</script>
+</html>

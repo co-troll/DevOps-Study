@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .background-box {
+            width: 1000px;
+            height: 1000px;
+            border: 1px solid
+        }
+
+        .content-list {
+            display: flex;
+            width: 100%;
+            height: 60px;
+            box-sizing: border-box;
+            /* border의 속성을 사용할 때 선의 크기도 계산을 시키는 속성 */
+            border: 3px solid;
+        }
+
+        .list-num {
+            width: 80px;
+            height: 100%;
+        }
+
+        .list-text {
+            width: 100%;
+            height: 100%;
+        }
+
+        .list-check {
+            width: 100px;
+            height: 100%;
+        }
+        .list-flex-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid;
+        }
+    </style>
+</head>
+<!--
+    1. 배경 레이아웃 (div) v
+    2. 리스트 레이아웃 (div (div div div)) v (이내용할때 뭐가 문제였다)
+    3. 리스트 내용 v
+-->
+<body>
+    <div class="background-box">
+        <div class="content-list">
+            <div class="list-num list-flex-item">1</div>
+            <div class="list-text list-flex-item">나는 오늘 집에가서 푹 잘거야</div>
+            <div class="list-check list-flex-item">
+                <input type="checkbox">
+            </div>
+        </div>
+        <div class="content-list">
+            <div class="list-num list-flex-item">2</div>
+            <div class="list-text list-flex-item">주말에 푹쉬어야겠다</div>
+            <div class="list-check list-flex-item">
+                <input type="checkbox">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

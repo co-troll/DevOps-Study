@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'MontserratR', 'NotoSansM' !important;
+}
+
+a {
+    background: 0 0;
+    text-decoration: none;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+label {
+    vertical-align: middle;
+    display: inline-block;
+    /* line-height: 30px; */
+    cursor: pointer;
+}
+
+input {
+    vertical-align: middle;
+    outline: none;
+}
+
+.mb0 {
+    margin-bottom: 0px !important;
+}
+
+.mb10 {
+    margin-bottom: 10px !important;
+}
+
+#wrap {
+    width: 100%;
+    background-color: beige;
+}
+
+#content {
+    position: relative;
+    top: 75px;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    padding-bottom: 70px;
+    background-color: beige;
+}
+
+#reg_tab {
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    line-height: 18px;
+}
+
+.s_intro {
+    min-height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.login-box {
+    margin: 0 20px;
+    padding: 20px 0;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+.logo {
+    width: 40%;
+    margin: 0 auto 20px;
+    text-align: center;
+}
+
+.logo > a > img {
+    width: 80%;
+    max-width: 300px;
+    vertical-align: middle;
+    border: 0;
+}
+
+.login-input {
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.inputBox {
+    text-align: left;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.inputBox .tit {
+    display: inline-block;
+    font-size: 22px;
+    font-weight: bold;
+    color: #555;
+}
+
+.tit::after {
+    margin-left: 8px;
+    font-size: 20px;
+    color:#6446ff;
+    content: "*";
+}
+
+.inputBox .introInput {
+    width: 100%;
+    height: 60px;
+    font-size: 22px;
+    color: #222;
+    margin: 0;
+    padding: 0 20px;
+    background-color: #f8f8fb;
+    border: none;
+    border-radius: 10px;
+    box-sizing: border-box;
+    line-height: 60px;
+
+}
+
+.inputBox.checkStyle {
+    font-size: 22px;
+    font-weight: bold;
+    color: #555;
+}
+
+.checkStyle > label > span {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #000;
+    border-radius: 100%;
+}
+
+.login-input-btn {
+    display: inline-block;
+    width: 100%;
+    height: 60px;
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: #fff;
+    background-color: #6446ff;
+    border: none;
+    border-radius: 10px;
+    line-height: 60px;
+    text-align: center;
+}
+
+.loginMenu {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.login-input-btn02 {
+    font-size: 18px;
+    color: #c2c2cc;
+}
+
+#btn_tab {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
+.regBox {
+    width: 49%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+.leftBox {
+    margin-right: 4%;
+}
+
+.imgBox {
+    width: 53px;
+    height: 51px;
+    margin: 0 auto 10px;
+}
+
+.txt {
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+    text-align: center;
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .background-box {
+            width: 360px;
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+
+        }
+        .input-box {
+            width: 100%;
+            height: 48px;
+            box-sizing: border-box;
+            padding: 3px 6px;
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+        p {
+            margin: 4px 0;
+            font-weight: bold;
+        }
+        .checking-box {
+            width: 100%;    
+            border: 1px solid;
+            box-sizing: border-box;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .check-box {
+            margin: 3px 6px;
+        }
+        .checking-text {
+            display: inline; 
+            font-size: 95%;
+            margin: 20px 0px;
+            font-weight: 100;
+        }
+    </style>
+</head>
+<!-- 
+    1. 배경 레이아웃 (div)
+    2. 각각 블럭 레이아웃 (div (글자 input))
+    4. 회원 가입 버튼
+
+-->
+<body>
+    <div class="background-box">
+        <h2 style="margin: 40px 0px;">사람인 아이디로 커리어 관리 끝!</h1>
+        <div>
+            <p>아이디</p>
+            <input class="input-box" type="text" placeholder="4~20자리 / 영문, 숫자, 특수문자 '_'사용가능">
+        </div>
+        <div>
+            <p>비밀번호</p>
+            <input class="input-box" type="password" placeholder="8~16자리/영문 대소문자, 숫자, 특수문자 조합">
+        </div>
+        <div>
+            <p>이름</p>
+            <input class="input-box" type="text" placeholder="이름 입력">
+        </div>
+        <div>
+            <p>생년월일</p>
+            <input class="input-box" type="text" placeholder="YYYYMMDD">
+        </div>
+        <div>
+            <p style="display: inline-block;">휴대폰</p>
+            <p style="font-size: 10px; font-weight: 100; float: right;">이메일 인증을 원하시면, 이메일 인증하기</p>
+            <input class="input-box" style="width: 72%;" type="text" placeholder="'-' 빼고 숫자만 입력">
+            <input class="input-box" style="width: 25%; float: right;" type="button" value="인증 요청">
+        </div>
+        <div>
+            <p>이메일</p>
+            <input class="input-box" type="email" placeholder="email@saramin.co.kr">
+        </div>
+        <div>
+            <p>약관</p>
+            <div class="checking-box">
+                <div>
+                    <input class="check-box" type="checkbox"><p style="display: inline;">전체 동의</p>
+                    <p style="font-size: 12px; font-weight: 100; margin: 3px 6px 6px 24px;">위치기반 서비스 이용약관(선택), 마케팅 정보 수신 동의(이메일,SMS/MMS)(선택) 동의를 포함합니다.</p>
+                </div>
+                <hr>
+                    <input class="check-box" type="checkbox"><p class="checking-text" style="font-weight: bold;">(필수) 개인회원 약관에 동의</p><br>
+                    <input class="check-box" type="checkbox"><p class="checking-text" style="font-weight: bold;">(필수) 개인정보 수집 및 이용에 동의</p><br>
+                    <input class="check-box" type="checkbox"><p class="checking-text">(선택) 위치기반서비스 이용약관에 동의</p><br>
+                    <input class="check-box" type="checkbox"><p class="checking-text">(선택) 마케팅 정보 수신 동의 - 이메일</p><br>
+                    <input class="check-box" type="checkbox"><p class="checking-text">(선택) 마케팅 정보 수신 동의 - SMS/MMS</p><br>
+            </div>
+        </div>
+        <input class="input-box" type="button" value="회원가입 완료">
+    </div>
+</body>
+</html>

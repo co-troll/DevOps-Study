@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'MontserratR', 'NotoSansM' !important;
+}
+
+a {
+    background: 0 0;
+    text-decoration: none;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+#wrap {
+    max-width: 568px;
+    font-size: 14px;
+}
+
+#header {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 53px;
+    padding: 0 53px;
+}
+
+#header > .back-html {
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    width: 40px;
+    height: 40px;
+    transform: translateY(-50%);
+}
+
+#header > .back-html::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: url(https://www.jejugage.co.kr/m/images/ic-navi-back.png) no-repeat center / cover;
+}
+
+#header > h1 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 53px;
+    text-align: center;
+}
+
+#content {
+    position: relative;
+    padding: 0 20px;
+}
+
+#content > h2.infoUpTit {
+    margin: 40px 0 10px 0;
+    padding-bottom: 0;
+    font-weight: 700;
+    font-size: 23px;
+    border:  none;
+}
+
+#content > p.infoUpTit {
+    font-size: 18px;
+}
+
+#content > h2 {
+    margin: 60px 0 40px 0;
+    padding-bottom: 10px;
+    font-size: 23px;
+    font-weight: 700;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+#content > .inpBox {
+    position: relative;
+    margin-top: 40px;
+}
+
+#content > .inpBox > label {
+    font-size: 18px;
+    display: inline-block;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+#content > .inpBox > .after::after {
+    margin-left: 8px;
+    font-size: 20px;
+    color:#6446ff;
+    content: "*";
+}
+
+#content > .inpBox > input, .input-box, #bank {
+    width: 100%;
+    height: 66px;
+    color: #222;
+    border: none;
+    border-radius: 10px;
+    background-color: #f8f8fb;
+    padding: 0 16px;
+    font-size: 16px;
+}
+
+.input-box {
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.inpBox > div > label {
+    display: inline-block;
+    color: #fff;
+    vertical-align: middle;
+    background-color: #999;
+    cursor: pointer;
+    width: 90px;
+    font-size: 15px;
+    padding: 10px 0;
+    text-align: center;
+    border-radius: 6px;
+    font-weight: 400;
+}
+
+.inpBox > div > input {
+    display: inline-block;
+    vertical-align: middle;
+    border: 0;
+    width: calc(100% - 100px);
+    color: #999;
+    background: none;
+}
+
+select {
+    text-align: left;
+    appearance: none;
+}
+
+.select-box {
+    position: relative;
+}
+
+.select-box::after {
+    content: "";
+    position: absolute;
+    right: 20px;
+    top: 75px;
+    width: 12px;
+    height: 11px;
+    background-image: url(https://www.jejugage.co.kr/m/images/semo_bott.png);
+    background-position: center;
+    background-size: cover;
+}
+
+.lastTxt {
+    position: relative;
+    margin: 45px 0;
+    padding-left: 15px;
+    font-size: 18px;
+    color: #575656;
+}
+
+.lastTxt::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    top: 12px;
+    left: 0;
+    position: absolute;
+    background-color: #B1A4F5;
+    border-radius: 50%;
+}
+
+.submitBtn {
+    display: block;
+    width: 100%;
+    font-size: 22px;
+    color: #fff;
+    background: #6446FF;
+    border-radius: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 15px 0;
+}

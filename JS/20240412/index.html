@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let a = "철수";
+    function name() {
+        console.log(a);
+        // 지역 스코프
+        function name2() {
+            console.log(a);
+        }
+        name2();
+        // name2 -> 내 스코프에서 a를 찾아야지 -> anem에서 a를 찾고 -> 전역에서 찾는다.
+    }
+    name();
+
+    function name2() {
+        return "내가 함수를 실행하고 사용하고 싶은 결과";
+    }
+    // 함수의 실행식을 변수에 할당하면?
+    // undefined를 기본값으로 반환한다.
+    let b = name2();
+    console.log(b);
+
+    // 실습 함수를 호출하면 키위 음료수를 받았습니다.
+
+    // 심화 함수를 호출할때 내가 전닳란 인자로 음료수의 종류를 받는거.
+    // 함수를 실행하면 반환받을 결과로 console.log(여기에 함수를 실행해서) 결과 도출
+
+    /* function fruit1() {
+        console.log("키위 음료수를 받았습니다.");
+    }
+    function fruit2(fruit) {
+        console.log(`${fruit} 음료수를 받았습니다.`);
+    }
+    function fruit3(fruit) {
+        return `${fruit} 음료수를 받았습니다.`;
+    }
+
+    fruit1();
+    fruit2("사과");
+    console.log(fruit3("딸기")); */
+
+    function cup(drink) {
+        return `컵에 ${drink}를 따라서 먹으니 기분이 좋아. ㅎㅎ`;
+    }
+
+    console.log("","","");
+    function vending(money, unit = null, text = null) {
+        // 거스름돈
+        // console.log(`${unit} 짜리 ${money/unit}개`)
+        console.log(vending.length);
+        if (unit === null) {
+            console.log(`${money}원을 넣었어`)
+        } else if (text === null) {
+            console.log(`${unit} 짜리 ${money / unit}개`);
+        } else {
+            console.log(`${unit} 짜리 ${money / unit}개 ${text}`);
+        }
+    }
+
+    // 지폐를 넣고 1000짜리 500원 단위로 거슬러줘
+    vending(1000);
+    vending(1000, 500);
+    vending(1000, 100, "기분이 좋아");
+    // 함수에는 length라는 키와 값이 존재한다.
+    // 매개변수를 몇개 받을 수 있는 함수인지?
+    console.log(vending.length);
+    console.log("123456789".length);
+
+    // 실습 두 수를 인자로 받아서 더해주는 함수를 만들자.
+    // 심화 전달한 인자(인덱스)로 성격을 3가지만 골라서 보여주는 내용
+    /* function add(n1, n2) {
+        return n1 + n2;
+    }
+    function think(n) {
+        if (n === 0) {
+            console.log("오 아 에");
+        } else if (n === 1) {
+            console.log("우 와 요");
+        } else if (n === 2) {
+            console.log("위 애 야");
+        } else {
+            console.log("여 유 이");
+        }
+    }
+
+    console.log(add(4, 5));
+    think(2); */
+
+    function hello(fn) {
+        let a = "js";
+        console.log(fn(a));
+    }
+
+    function print(name) {
+        return 10 + name;
+    }
+    hello(print);
+
+    console.log(() => { return 1; })
+
+    // 콜백함수를 만들고 매개변수를 2개 받아서
+    // 두 함수를 호출해서 나는 함수를 잘쓰고 싶어, 오늘 복습하고 질문하고 블로그 정리 해야겠다, 두 숫자를 받아서 더하는 값을 하나 보여주기.
+    const callback = (f1, f2, n1, n2) => {
+        console.log(f1(), f2(n1, n2));
+    }
+    const sentence = () => {
+        return "나는 함수를 잘쓰고 싶어, 오늘 복습하고 질문하고 블로그 정리 해야겠다.";
+    }
+    const add = (n1e, n2) => {
+        return n1 + n2;
+    }
+
+    callback(sentence, add, 10, 20);
+
+</script> 
+</html>

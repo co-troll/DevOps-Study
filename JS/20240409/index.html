@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // let, var, const
+    const a = 10;
+    
+    /* console.log(1 === 1); // true
+    console.log(2 === 1); // false
+    console.log("1"=== 1); // false
+    
+    // 부정문 
+    console.log(!true) // false
+    console.log(!false) // true */
+
+    // 크기를 비교하는 비교 연산자
+    // 크기가 미만 초과
+    // 작은수 < 큰수 : true
+    // 큰수 > 작은수 : true
+
+    // 크기가 이하 이상
+    // 3 <= 3 : true
+
+    /* const num = 3;
+    const num2 = 3;
+
+    console.log(num < num2);
+    console.log(num <= num2);
+
+
+    // num3 num4의 변수를 선언하고
+    // num3에는 20을 할당 num4에는 30을 할당하고
+    // < 크기 비교 연산자를 사용해서 true가 출력되게
+    let num3 = 20;
+    let num4 = 30;
+    console.log(num3 < num4);
+    console.log(num3 <= num4);
+
+    // 논리 연산자
+    
+    // || OR 둘중에 하나라도 true면 true
+    // true // true : true
+    // true // false : true
+    // false // true : true
+    // false // false : false
+
+    console.log((2 === 3) || (2 === 2)); // true
+    console.log((2 !== 2) || (1 > 2)); //false  
+    
+    // && AND : 둘다 참이여야지 참
+    // true && true : true
+    // true && false ; false 
+    // false && false : false
+
+    console.log((2 < 3) && (2 > 1)); */
+
+    // 크기를 num5, num6, num7, num8 변수를 선언하고
+    // num5에는 10을 할당
+    // num6에는 10을 할당
+    // num7에는 20을 할당
+    // num8에는 30을 할당
+
+    // num5 num6을 비교 연산자로 비교한다.
+    // num7 num8을 비교 연산자로 비교한다.
+    // 논리연산자로
+    // OR 연산자로 true를 반환하고
+    // AND 연산자로 true를 반환하세요 
+
+    /* let num5 = 10;
+    let num6 = 10;
+    let num7 = 20;
+    let num8 = 30;
+
+    console.log((num5 == num6) || (num7 > num8));
+    console.log((num5 == num6) && (num7 < num8)); */
+
+    // 조건문을 나가기전에 선행으로 좀
+    
+    // input output
+    // 브라우저의 모달을 활용
+
+    // alert 모달을 창을 띄어준다.
+    // alert("비밀번호를 입력하세요");
+    // alert 브라우저에서 알림 메세지 용도로 사용
+    
+    // prompt 모달창에서 입력값을 변수에 할당 가능하다.
+    /* let input1 = prompt("입력할 내용의 설명");
+    console.log(input1);
+
+    // input2를 선언하고 이름을 입력 받는 input 모달을 만들어 보세요
+    let input2 = prompt("이름을 입력해주세요");
+    console.log(input2); */
+
+    // 조건문
+
+    // 스코프
+    // 전역변수 : 전역에 선언한 변수
+    // 지역변수 : 해당 영역에서 선언하고 사용될 변수
+
+    // 블록 스코프, 함수 스코프, 렉시컬 스코프
+    
+    /* let input3; // 전역은 어디서든 접근이 가능한 변수
+    {
+        // 여기는 지역
+        input3 = 0;
+        // 지역에서 선언한 변수
+        // 지역 변수
+        // 블록 스코프 안에서 선언한 변수는 블록 스코프 안에서만 있다가
+        // 동작이 끝나면 해제 된다.
+        let input4 = 1;
+    }
+    {
+        // console.log(input4);
+    }
+    console.log(input3);
+    // console.log(input4);
+
+    let age = prompt("나이를 입력하세요");
+    // 조건문
+    if (age < 20) {
+        // 스코프의 코드내용이 실행되는 조건을 작성할 수 있다.
+        alert("나는 미성년자야");
+    }
+    alert("나는 전역에서 실행되요.");
+
+    // 변수로 성별을 받고 남자 여자
+    // if 조건문엔 남자 면 남자입니다.
+    let gender = prompt("성별은 입력하세요");
+    if (gender == "남자") {
+        alert("남자입니다.");
+    }
+    else if (gender == "여자") {
+        alert("여자입니다.");
+    }
+    else {
+         // 위에 조건이 모두다 아니고 실행될 내용
+         alert("성별을 제대로 입력 해주세요.")
+    } */
+
+    // 변수를 선언학 점수 입력값을 할당 받고
+    // 점수가 90 ~ 100점이면 A를 출력하고
+    // 점수가 80 ~ 90 이면 B를 출력하고
+    // 점수가 70 ~ 80점 이상이면 C를 출력하고
+    // 점수가 70점 미만에는 D를 출력합니다.
+
+    
+    /* let score = prompt("점수를 입력해주세요.");
+    if (score >= 90) {
+        console.log("A");
+    }
+    else if (score >= 80) {
+        console.log("B");
+    }
+    else if (score >= 70) {
+        console.log("C");
+    }
+    else {
+        console.log("D");
+    } */
+
+    // 가위바위보
+    // 1. 컴퓨터 값을 우리가 입력해주고
+    // 2. 플레이어가 값을 입력(가위, 바위, 보)
+    // 3. 조건문을 작성
+    // 4. 플레이어의 값이 가위면 -> 이기는 조건은 컴퓨터가 보 -> 무승부 가위 -> 지는 조건 바위
+    // 5. 플레어어의 값이 바위면 -> 이기는 조건은 가위 -> 무승부 바위 -> 지는 조건 보
+    // 6. 플레어이어 값이 보 -> 이기는 조건은 바위 -> 지는 조건 가위
+
+    // 구현을 목표로하고 -> 클린코드
+
+    // if 조건문으로 작성
+
+    // switch 문
+    /* [switch] ([값]) {
+        실행코드의 내용을 작성하는데.
+        case [값에 따른 조건]: 
+            break; // 코드를 중단
+            return; // 값을 반환한다.
+    } */
+    
+    const RUN = 0;
+    const STATE = 1;
+    const WORK = 2;
+
+    switch (index) {
+        case RUN:
+            console.log("0의 값이 들어왔다.");
+            break;
+        case STATE: 
+            console.log("1의 값이 들어왔다.");
+            break;
+        case WORK:
+            console.log("2의 값이 들어왔다.");
+            break;
+        default:
+            console.log("충족하는 조건이 없을때 실행");
+            break;
+    }
+
+
+</script>
+</html>

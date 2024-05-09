@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul, li {
+    list-style: none;
+}
+
+.comment {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 30px;
+    width: 600px;
+    margin: 0 auto;
+}
+
+.comment>li {
+    margin-top: 20px;
+}
+
+.comment>li:nth-child(1) {
+    margin: 0;
+}
+
+.comment-row {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.comment-row>li:nth-child(2) {
+    display: flex;
+    padding-left: 25px;
+    width: max-content;
+}
+
+.comment-form>form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.comment-form>form>h4 {
+    width: 100%;
+    margin: 14px 0 14px 0;
+}
+
+.comment-content {
+    cursor: pointer;
+    padding-right: 25px;
+}
+
+.ps-box {
+    display: block;
+    position: relative;
+    width: 80%;
+    height: 50px;
+    border: 1px solid #777;
+    padding: 10px 14px;
+    background-color: #888;
+    box-sizing: border-box;
+}
+
+.ps-box>input {
+    outline: none;
+}
+
+.int {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 30px;
+    padding-right: 25px;
+    line-height: 30px;
+    border: none;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.btn {
+    width: 20%;
+    padding: 16px 0 16px;
+    text-align: center;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+}

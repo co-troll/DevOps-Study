@@ -1,0 +1,25 @@
+#writeFrm > div,
+#modifyFrm > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 5px 0;
+}
+
+#writeFrm .title-input,
+#modifyFrm .title-input {
+    width: 100%;
+    height: 30px;
+    margin: 5px 0;
+    margin-bottom: 10px;
+}
+
+textarea {
+    padding: 5px;
+    width: 100%;
+    height: 150px;
+    resize: none;
+    margin: 5px 0;
+    margin-bottom: 10px;
+}

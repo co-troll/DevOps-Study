@@ -1,0 +1,393 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 모바일 사이즈 스타일 */
+#wrap {
+    width: 100%;
+    overflow: hidden;
+}
+
+#wrap > #header > .gnb {
+    width: 100%;
+    height: 60px;
+    background-color: #444;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;}
+
+.gnb .gnb-button {
+    display: block;
+    width: 60px;
+    height: 60px;
+    position: relative;
+}
+
+.gnb .gnb-button span {
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 4px;
+    border-radius: 3px;
+    left: 20px;
+    top: 20px;
+    background-color: white;
+}
+
+/* nth-child(1) : 자식요소중에 몇번째 요소인지 1부터 첫번째 요소 선택 */
+.gnb .gnb-button span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.gnb .gnb-button span:nth-child(3) {
+    top: auto;
+    bottom: 20px;
+}
+
+.gnb .logo {
+    color: white;
+    font-weight: 800;
+}
+
+.gnb .user-icon {
+    display: block;
+    width: 60px;
+    height: 60px;
+    position: relative;
+    /* background-image: url(../image/user_icon.png);
+    background-size: cover;
+    background-position: 0 0;
+    background-repeat: none; */
+}
+
+.gnb .user-icon::after {
+    content: "";
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    transform: translateX(-50%);
+    display: block;
+    border-radius: 50%;
+}
+
+.gnb .user-icon::before {
+    content: "";
+    width: 22px;
+    height: 15px;
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    top: 30px;
+    transform: translateX(-50%);
+    display: block;
+    border-radius: 10px 10px 0 0;
+}
+
+#header > .notification {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    font-size: 12px;
+}
+
+#header > .notification > i {
+    border: 8px solid blue;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+#wrap > #content {
+    width: 100%;
+    min-height: calc(100% - 120px);
+    background-color: #eee;
+}
+
+#content > .title {
+    width: 100%;
+    height: 65px;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    background-color: white;
+    font-size: 16px;
+    font-weight: 800;
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+}
+
+#content > .nav-wrap {
+    position: relative;
+}
+
+#content > .nav-wrap > .nav {
+    width: 100%;
+    height: 45px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 0 8px;
+}
+
+.nav-wrap > .nav > li {
+    display: block;
+    padding: 6px 8px;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.nav-wrap > .nav li.active {
+    color: red;
+}
+
+.nav-wrap > button {
+    width: 60px;
+    height: 40px;
+    border-radius: 6px;
+    border: 0;
+    position: absolute;
+    top: 2.5px;
+    right: 8px;
+    background-color: #ddd;
+}
+
+.nav-wrap > button::after, 
+.nav-wrap > button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 10px;
+    border: 2px solid white;
+}
+
+.nav-wrap > button::after {
+    left: calc(50% - 5px);
+    transform: translate(-50%, -50%) rotate(35deg);
+}
+
+.nav-wrap > button::before {
+    left: calc(50% + 5px);
+    transform: translate(-50%, -50%) rotate(-35deg);
+}
+
+#content > .card-wrap {
+    padding: 12px 6px;
+}
+
+#content > .card-wrap > .card {
+    width: 348px;
+    height: 260px;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+.card-wrap > .card > img {
+    width: 100%;
+}
+
+.card-wrap > .card > div {
+    width: 100%;
+    height: 70px;
+}
+
+.card > div > h3 {
+    font-size: 12px;
+    width: 348px;
+    height: 50%;
+    box-sizing: border-box;
+    display: flex;
+    padding: 0 8px;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+}
+
+.card > div > h3::after {
+    content: "NEW";
+    color: white;
+    display: block;
+    padding: 2px 5px;
+    background-color: red;
+    position: absolute;
+    left: 90px;
+}
+
+.card > div > div {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8px;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+
+.paging {
+    width: 100%;
+    background-color: #eee;
+    padding: 20px 0;
+}
+
+.paging > ul {
+    width: 80%;
+    height: 40px;
+    margin: 0 auto;
+    background-color: #eee;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.paging > ul > li {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.paging > ul > .active {
+    background-color: #444;
+    color: white;
+}
+
+.paging > ul > .next {
+    background-image: url(https://www.dbcut.com/theme/dbcut/img/btn_next.gif);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+.paging > ul > .end {
+    background-image: url(https://www.dbcut.com/theme/dbcut/img/btn_end.gif);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+/* https://www.dbcut.com/theme/dbcut/img/btn_next.gif */
+/* https://www.dbcut.com/theme/dbcut/img/btn_end.gif */
+
+.search {
+    width: calc(100% - 16px);
+    height: 40px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    margin: 0 8px;
+}
+
+.search > select {
+    width: 100px;
+    height: 34px;
+    border: 0;
+    margin-right: 2px;
+}
+
+.search > input {
+    width: 220px;
+    height: 28px;
+    padding: 3px 6px;
+    border: 0;
+}
+
+.search > div {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search > div > img {
+    width: 15px;
+}
+
+.state {
+    width: 100%;
+    padding: 10px 8px;
+    box-sizing: border-box;
+}
+
+.state > span {
+    background-color: rgb(84, 84, 214);
+    width: 100px;
+    height: 30px;
+    display: flex;
+    border-radius: 16px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.state > .states-content {
+    width: 328px;
+    background-color: white;
+    margin: 10px auto;
+    padding: 4px 6px;
+}
+
+.state > .states-content > div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+#wrap > #footer {
+    width: 100%;
+    background-color: #333;
+    padding-bottom: 20px;
+}
+
+#footer > div:nth-child(1) {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 24px;
+}
+
+#footer > div:nth-child(2) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: #888;
+}
+
+#footer > button {
+    width: 328px;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: block;
+    font-size: 14px;
+    height: 40px;
+    background-color: gray;
+    border: 0;
+    border-radius: 4px;
+    color: white;
+}
+
+#footer > div > span {
+    font-size: 14px;
+    font-weight: 800;
+    color: white;
+}
+
+.pc {
+    display: none;
+}
+

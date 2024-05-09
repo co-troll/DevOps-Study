@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span></span>
+    <h2 id='header'>
+        <ul class="border">
+            <li>
+                <span>인덱스</span>
+                <span>제목</span>
+                <span>내용</span>
+            </li>
+            <li>
+                <span>1</span>
+                <span>제목 1</span>
+                <span>내용 1</span>
+            </li>
+        </ul>
+    </h2>
+    <div>
+        <label for="">제목</label>
+        <input type="text" id="title_input"/>
+        <label for="">글 내용</label>
+        <!-- 글의 내용을 줄내림이 필요한 내용을 작성할 때 -->
+        <textarea name="" id="content_input"></textarea>
+        <button id="btn" onclick="postContent()">글 작성</button>
+    </div>
+    <div class="training">
+        <div class="rand"></div>
+        <button id="randbtn" onclick="randInput()">버튼</button>
+    </div>
+</body>
+<script>
+    console.log(header.innerHTML);
+    header.innerHTML += "<div>안녕하세요</div>"
+    console.log(header.childNodes);
+    let el = document.createElement("div");
+    el.innerHTML = "노드 생성";
+    header.append(el);
+    // 데이터베이스의 내용을 받아서
+    // DTO : 데이터를 우리가 사용할 형태로 변경해서 받아온다.
+    let arr = [{ index: 1, title: "제목1", content: "내용1" }, { index: 2, title: "제목2", content: "내용2" }]
+
+    // 로그인 게시판 === 50%
+    function createContent(index, title, content) {
+        let _li = document.createElement("li");
+        let _span01 = document.createElement("span");
+        let _span02 = document.createElement("span");
+        let _span03 = document.createElement("span");
+        _span01.innerHTML = index;
+        _span02.innerHTML = title;
+        _span03.innerHTML = content;
+        _li.append(_span01);
+        _li.append(_span02);
+        _li.append(_span03);
+        // li[0 : _span01, 1 :_span02, 2 : _span03]
+        document.querySelector(".border").append(_li);
+
+    }
+    
+    function render() {
+        document.querySelector(".border").innerHTML = `
+            <li>
+                <span>인덱스</span>
+                <span>제목</span>
+                <span>내용</span>
+            </li>
+        `;
+        for (let i = 0; i < arr.length; i++) {
+            createContent(arr[i].index, arr[i].title, arr[i].content);
+        }
+    }
+
+    render();
+
+    /* // 간단한 실습 랜덤한 숫자를 6개 뽑아서 화면에 보여주자. 각각의 el
+
+     let el2 = document.createElement("span");
+    for (let i = 0; i < 6; i++) {
+        let randint = Math.floor(Math.random() * 100 + 1); 
+        el2.innerHTML += randint + " "; 
+        document.querySelector(".rand").append(el2);
+    } */
+
+    function postContent() {
+        const content = {
+            index: arr.length + 1, 
+            title: title_input.value, 
+            content: content_input.value,
+        };
+        arr.push(content);
+        render();
+    }
+
+    // 랜덤한 숫자를 버튼을 클릭할때 번호를 배열에 추가하면서 화면에 출력하세요 (심화 로또화)
+    let lottoNums = Array(45).fill().map((v, i) => i+1);
+    
+    let randarr = [];
+    let outputbox = document.querySelector(".rand");
+    let result = document.createElement("span");
+    
+    function randInput() {
+        if (randarr.length == 6)
+            randarr.push("+ ");
+        else if (randarr.length == 8) 
+            return;
+        let randint = Math.floor(Math.random() * lottoNums.length);
+        randarr.push(lottoNums.splice(randint, 1) + " ");
+        console.log(randarr);
+        randOutput();
+    }
+
+    function randOutput() {
+        result.innerHTML = ``;
+        for (let randint of randarr) {
+            result.innerHTML += randint;
+            outputbox.append(result);
+        }
+    }
+
+</script>
+</html>

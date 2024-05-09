@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/view.css">
+    <link rel="stylesheet" href="../CSS/main.css">
+</head>
+<body>
+    <div class="background">
+        <div id="header">
+            <span></span>
+            <span class="title"></span>
+            <span id="userId">ID : </span>
+        </div>
+        <form id="viewFrm">
+            <textarea class="content" readonly></textarea>
+        </form>
+        <div class="btnBox">
+            <input type="button" onclick="modifyBtn()" value="수정">
+            <input type="button" onclick="deleteBtn()" value="삭제">
+            <input type="button" onclick="back()" value="뒤로가기">
+        </div>
+        <form id="replyFrm">
+            <input type="text" placeholder="댓글을 입력하세요" class="int" name="reply">
+            <input type="submit" class="btn" value="등록" id="replyBtn">
+        </form>
+        <div id="replyBox">
+            
+        </div>
+    </div>
+    
+</body>
+<script src="../js/view.js"></script>
+</html>

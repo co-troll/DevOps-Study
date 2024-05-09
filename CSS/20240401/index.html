@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- id : 문서에 하나만 포함 되어야 하는 이름(자바스크립트에서 사용) 페이지의 스크롤 관련해서도 사용을 한다. -->
+    <!-- id를 요소에게 주고 id의 값에 맞는ㄴ 요소로 스크롤 이동. -->
+    <style>
+        .content {
+            width: 100%;
+            /* 보고있는 브라우저의 화면의 크기만큼 크기를 같는다. 100vh == 100% */
+            height: 200vh;
+            background-color: bisque;
+        }
+
+        .item {
+            height: 100vh;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <a href="#list">두번째 리스트로 이동</a>
+        <div class="item">
+            <h1>첫번째 리스트</h1>
+            <ul>
+                <li>아이템1</li>
+                <li>아이템2</li>
+            </ul>
+        </div>
+        <a href="#">최상단으로 이동</a>
+        <div id="list">
+            <h1>두번째 리스트</h1>
+            <ol>
+                <li>아이템1</li>
+                <li>아이템2</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>

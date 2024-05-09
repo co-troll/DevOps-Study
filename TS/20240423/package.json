@@ -1,0 +1,14 @@
+{
+  "name": "mypackage",
+  "version": "1.0.0",
+  "description": "> command line interface",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^5.4.5"
+  }
+}

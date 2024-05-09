@@ -1,0 +1,60 @@
+<html>
+  <head>
+  </head>
+  <body>
+    
+    <div id="languages">
+      <span class="html">HTML</span>
+      <span class="css">CSS</span>
+      <span class="js">JS</span>
+    </div>
+    <div class="content-box">
+        <div class="content">
+            <span class="no init">번호</span>
+            <span class="title init">제목</span>
+            <span class="table init">내용</span>
+        </div>
+        <div class="content drag">
+            <span class="no">1</span>
+            <span class="title">12</span>
+            <span class="table">222</span>
+            <div class="drag" draggable="true"></div>
+        </div>
+        <div class="content drag">
+            <span class="no">2</span>
+            <span class="title">12</span>
+            <span class="table">222</span>
+            <div class="drag" draggable="true"></div>
+        </div>
+        <div class="content drag"><span class="no">3</span>
+            <span class="title">12</span>
+            <span class="table">222</span>
+            <div class="drag no1" draggable="true"></div>
+        </div>
+    </div>
+    <script>
+      const $languages = document.getElementById('languages');
+      const no1 = document.querySelector(".no1");
+      console.log(no1.parentNode);
+      
+      console.log($languages);
+      console.log($languages.childNodes);
+      console.log($languages.children);
+      console.log($languages.firstChild);
+      console.log($languages.lastChild);
+      console.log($languages.firstElementChild);
+      console.log($languages.lastElementChild);
+      console.log($languages.hasChildNodes());
+      console.log($languages.children.length);
+      console.log($languages.childElementCount);
+
+
+      let a = 0
+while (a < 5) {
+    console.log(a);
+    a++;
+}
+    </script>
+  </body>
+  <script src="test.js"></script>
+</html>

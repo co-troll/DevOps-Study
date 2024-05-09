@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul, li {
+    list-style: none;
+}
+
+.container {
+    width: 800px;
+    height: 50vh;
+    margin: 25vh auto;
+    background-color: gray;
+
+}
+
+.board-title > li {
+    height: 40px;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board-title {
+    display: flex;
+}
+
+.board {
+    display: flex;
+}
+.board > li {
+    height: 40px;
+    display: flex;
+    background-color: blue;
+    border: 1px solid;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.num-area {
+    width: 10%;
+}
+.title-area {
+    width: 50%;
+}
+.file-area {
+    width: 15%;
+}
+.date-area {
+    width: 15%;
+}
+.view-area {
+    width: 10%;
+}

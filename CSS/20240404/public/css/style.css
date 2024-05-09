@@ -1,0 +1,507 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* #header, #menu, #title, #content-menu, #curri, #qna, #footer, .title {
+    border: 1px solid red;
+}
+
+#intro, .intro-box, .intro2, .intro3 {
+    border: 1px solid red;
+} */
+
+/* .lecture-box, .qna-box {
+    border: 2px solid #217AFF;
+} */
+
+#wrap {
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+#head {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#header {
+    width: 100%;
+    padding: 0 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#header > div {
+    display: flex;
+    align-items: center;
+}
+
+#header > div > img {
+    height: 20px;
+}
+
+#header > div > span {
+    font-size: 10px;
+    color: #aaa;
+}
+
+#menu {
+    width: 100%;
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#menu > div {
+    display: flex;
+    align-items: center;
+}
+
+#menu > div > ui, .menu > a {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 20px;
+    margin-right: 20px;
+}
+
+.menu > li {
+    font-size: 12px;
+    margin: 0 20px;
+}
+
+.menu > li.checked {
+    font-weight: bold;
+}
+
+#menu > div > img {
+    height: 20px;
+}
+
+#menu > div > span:nth-child(3) {
+    font-size: 10px;
+}
+
+#menu > div > span:nth-child(4) {
+    background-color: #eee;
+    border-radius: 5px;
+    padding: 1px 2px;
+    font-size: 5px;
+    color: #bbb;
+}
+
+#title {
+    width: 100%;
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+#title > div {
+    display: flex;
+}
+
+#title > div > img {
+    height: 200px;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+#title .desc > h1 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+
+#title .desc > h2 {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#title .desc > div {
+    margin: 20px 10px;
+    display: flex;
+    align-items: center;
+}
+
+#title .desc span {
+    font-size: 8px;
+    color: #fff;
+    background-color: rgb(110 56 247);
+    border-radius: 10px;
+    padding: 4px 8px;
+    margin-right: 5px;
+}
+
+#content-menu {
+    width: 100%;
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#content-menu > a {
+    font-size: 10px;
+    margin-right: 20px;
+    padding: 5px 0px;
+    color: #bbb;
+    font-weight: 200;
+    border-bottom: 4px solid rgba(0, 0, 0, 0);
+    cursor: pointer;
+}
+
+#content-menu > a:hover {
+    color: rgb(110 56 247);
+    border-bottom: 4px solid;
+    font-weight: bold;
+}
+
+#content {
+    width: 100%;
+}
+
+#content > div {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+#content p {
+    margin-left: 5px;
+    font-size: 10px;
+    color: #bbb;
+}
+
+#curri {
+    margin-bottom: 10px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    padding: 10px 8px;
+}
+
+.title > h1 {
+    font-size: 20px;
+    color: #217AFF;
+}
+
+.lecture-box {
+    margin: 8px;
+}
+
+.lecture-box > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.lecture-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.lecture-title > span {
+    font-size: 15px;
+    font-weight: bold;    
+}
+
+.select-btn > input {
+    display: none;
+}
+
+.select-btn {
+    position: relative;
+}
+
+.select-btn > input + label {
+    display: inline-block;
+    width: 100%;
+    padding: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: rgb(246, 246, 246);
+    border: 1px solid #bbb;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.select-btn .v {
+    position: absolute;
+    width: 20px;
+    transform:rotate(180deg) translate(30px, -50%);
+}
+
+.hidden-box {
+    overflow: hidden;
+    height: 0;
+}
+
+#tab1:checked ~ .box1 {
+    height: 100%;
+}
+
+#tab2:checked ~ .box2 {
+    height: 100%;
+}
+
+#tab3:checked ~ .box3 {
+    height: 100%;
+}
+
+#tab4:checked ~ .box4 {
+    height: 100%;
+}
+
+#tab1:checked ~ .v {
+    transform: translate(-30px , 50%);
+}
+
+#tab2:checked ~ .v {
+    transform: translate(-30px , 50%);
+}
+
+#tab3:checked ~ .v {
+    transform: translate(-30px , 50%);
+}
+
+#tab4:checked ~ .v {
+    transform: translate(-30px , 50%);
+}
+
+.lectures {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 5px;
+    font-size: 12px;
+    border: 1px solid #eee;
+}
+
+.lectures .time {
+    font-size: 10px;
+}
+
+.lectures > div {
+    display: flex;
+    align-items: center;
+}
+
+.lectures .preview {
+    position: relative;
+}
+
+.lectures .preview::after {
+    position: absolute;
+    content: "미리보기";
+    font-size: 8px;
+    width: 32px;
+    padding: 3px;
+    border: 1px solid;
+    text-align: center;
+    border-radius: 2px;
+    color: rgb(110 56 247);
+    transform: translateX(10px);
+}
+
+.play {
+    width: 15px;
+    margin-right: 5px;
+}
+
+.qna-box {
+    margin: 8px;
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+}
+
+.qna-box > div {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+
+}
+
+.qna-box > div > span {
+    color: rgb(110 56 247);
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.qna-box > div > h2 {
+    font-size: 14px;
+}
+
+.qna-box > span {
+    font-size: 10px;
+    display: block;
+    margin: 10px 0;
+}
+
+#footer {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+
+}
+
+#footer > div {
+    width: 100%;
+    margin: 0 200px;
+}
+
+#footer > div > img {
+    height: 25px;
+}
+
+#footer > div > h1 {
+    font-size: 11px;
+    padding: 10px 0;
+}
+
+#footer > div > h4 {
+    font-size: 10px;
+    font-weight: 100;
+}
+
+.last {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 20px 0;
+}
+
+.last > span {
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.last > p {
+    font-size: 8px;
+    color: #bbb;
+}
+
+/* -------------------------------------------- */
+
+.intro-box {
+    padding: 10px 8px;
+}
+
+.intro-box > h2 {
+    font-size: 20px;   
+}
+
+.intro-box > div {
+    height: 5px;
+}
+ 
+.intro-box > h3 {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.intro2 > h1 {
+    font-size: 18px;
+    padding: 8px;
+    margin: 10px 0;
+}
+
+.intro2 > div {
+    width: 100%;
+    height: 90px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    margin: 10px 8px;
+    padding: 15px 0; 
+    display: flex;
+    align-items: center;
+}
+
+.intro2 > div > div {
+    width: 140px;
+    border-right: 1px solid #bbb;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.intro2 span {
+    font-size: 18px;
+    font-weight: bold;
+    margin: auto 20px;
+}
+
+.intro2 li {
+    list-style: inside;
+    font-size: 10px;
+    padding: 5px 30px;
+
+}
+
+.intro3 h1 {
+    font-size: 18px;
+    padding: 8px;
+    margin: 10px 0;
+}
+
+.intro3 > div {
+    width: 100%;
+    height: 90px;
+    border: 1px solid rgb(226, 216, 255);
+    background-color: rgb(248, 243, 255);
+    border-radius: 5px;
+    margin: 10px 8px;
+    padding: 15px 0; 
+    display: flex;
+    align-items: center;
+}
+
+.intro3 > div > div {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0 20px;
+}
+
+.intro3 span {
+    color: rgb(110 56 247);
+    font-weight: bold;
+    text-align: center;
+    font-size: 14px;
+}
+
+.intro3 li {
+    font-size: 11px;
+    padding: 5px 0;
+    font-weight: 500;
+}
+
+.intro3 li::marker {
+    content: "✔ ";
+    color: greenyellow;
+
+}

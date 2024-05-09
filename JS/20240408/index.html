@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<!-- 스크립트 영역을 만나면 스크립트를 읽고 진행한다.
+     스크립트에서 요소를 다루게 되면 요소가 생기고 스크립트로 제어하기 위해서. -->
+<script>
+    // 자바스크립트 작성 영역
+    let string = "soon";
+    // 변수의 자료형
+    // 문자열은 '', "" 로 작성한다.
+    // '문자열', "문자열"
+    // 자료형의 종류
+    // 숫자, 문자, bool, null, undefined
+    // null은 개발자가 값이 없을것이다 라고 명시하는 자료형
+    // undefined는 값이 없을 경우
+    // 호이스팅 용어!!
+    // window === 브라우저의 기능과 이벤트와 등등 사용할 수 있는 기능을 제공해줌
+    console.log("1" == 1);
+    // == 값이 같은지 비교
+    // === 값이 같은지 비교 자세히 비교 자료형까지 비교
+    console.log(false);
+    // console.log는 우리의 개발자 모드에서 콘솔의 내용을 확인할 수 있다. 디버깅할때 많이 사용한다.
+
+    let string2 = "문자열 자료형";
+    console.log(string2);
+    // var와 let의 예약어를 읽을때 var는 undefined를 let은 빈 값을 
+    let number = 1;
+
+    // 용어 예약어(var, let, const) 변수명(우리가 정하는 이름) =(할당) 1(변수의 값이자 자료형은 number)
+    // 숫자 자료형
+
+    // bool 자료형
+    let bool = true;
+    let bool2 = false;
+
+    // null 자료형 개발자가 빈값을 명시 해놓는것. (휴지 두루마리 각이 없는것.)
+    let temp = null;
+
+    // undefined (후지 두루마리 다쓰고 각 안뺌) 개발자가 예측하지 못해서 빈값인 자료형
+    let temp2 = undefined;
+
+    // 연산자
+    console.log(1 + 1);
+    console.log(1 - 1);
+    console.log(4 / 2);
+    console.log(7 % 2);
+    console.log(2 * 3);
+
+    let num1 = 10;
+    let num2 = 20;
+    let num3 = num1 + num2;
+    console.log(num3);
+    // 계산기를 만든다 생각하면
+    const number0 = "0";
+    const number1 = "1";
+    const number2 = "2";
+    const number3 = "3";
+    const number4 = "4";
+    const number5 = "5";
+    const number6 = "6";
+    const number7 = "7";
+    const number8 = "8";
+    const number9 = "9";
+    const add = "+";
+
+    let rusult = "";
+    result = number1 + number2 + add + number2 + number0;
+    console.log(result)
+
+    // 형변환 자료형이 변환된다.
+    // 숫자에 문자를 더하면 형변환이 일어난다.
+    // 1은 수자 자료형이였지만
+    // 14라는 문자열로 형변환이 된다.
+    console.log(1 + number4);
+
+    // 표기법
+    let myName; // 카멜표기법
+    let MyName; // 파스칼표기법
+    let my_name; // 스네이크 표기법
+
+    // 카멜 표기법
+
+    // 실습
+    // 0. 전화번호는 자료형 숫자 953
+    // 1. 철수와 영희가 전화를 받았다
+    // 2. 철수가 안녕이라고 영희에게 말했다
+    // 3. 영희는 나 잘래 하고 끈었다.
+    // 각각의 변수로 만드는데 띄어쓰기 구문마다 합연산자
+
+    let keyWord = "";
+    let key1 = "병현이가 ";
+    let key2 = "아침을 ";
+    let key3 = "먹었을까?";
+
+    keyWord = key1 + key2 + key3;
+    "병현이가 아침을 먹었을까?"
+
+    let keyWord0 = "";
+    let keyWord1 = "";
+    let keyWord2 = "";
+    let keyWord3 = "";
+    let key01 = "전화번호는 "
+    let key02 = "자료형 "
+    let key03 = "숫자 "
+    let key04 = 900 ;
+    let key05 = 50 ;
+    let key06 = 3;
+    let key11 = "철수와 "
+    let key12 = "영희가 "
+    let key13 = "전화를 "
+    let key14 = "받았다."
+    let key21 = "철수가 "
+    let key22 = "안녕이라고 "
+    let key23 = "영희에게 "
+    let key24 = "말했다. "
+    let key31 = "영희는 "
+    let key32 = "나 "
+    let key33 = "잘래 "
+    let key34 = "하고 "
+    let key35 = "끈었다. "
+    keyWord0 = key01 + key02 + key03 + (key04 + key05 + key06);
+    keyWord1 = key11 + key12 + key13 + key14;
+    keyWord2 = key21 + key22 + key23 + key24;
+    keyWord3 = key31 + key32 + key33 + key34 + key35;
+    console.log(keyWord0);
+    console.log(keyWord1);
+    console.log(keyWord2);
+    console.log(keyWord3);
+</script>
+</html>

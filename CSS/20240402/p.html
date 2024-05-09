@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./public/css/pstyle.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-wrap">
+            <h2 class="login-title">회원 로그인</h2>
+            <h3 class="login-desc">"금성출판사 티칭허브에 오신걸 환영합니다."</h3>
+            <p class="login-img">
+                <img src="./public/img/character_login.png" alt="로그인 캐릭터">
+            </p>
+            <form class="login-form" action="get">
+                <div class="login-input-wrap">
+                    <input class="base-input" type="text" name="userid" id="userid" placeholder="아이디">
+                    <input class="base-input" type="password" name="userid" id="userpw" placeholder="비밀번호">
+                </div>
+                <div class="id-save">
+                    <div class="base-checkbox">
+                        <input type="checkbox" name="save-id" id="save-id">
+                        <label for="save-id">아이디 저장</label>
+                    </div>
+                    <div class="find-idpw">
+                        <a href="">아이디 찾기</a>
+                        <a href="">비밀번호 찾기</a>
+                    </div>
+                </div>
+                <div class="login-btn-wrap">
+                    <a href="" class="btn login-btn">로그인</a>
+                    <a href="" class="btn register-btn">회원가입</a>
+                </div>
+            </form>
+            <div class="sns-btn-wrap">
+                <p class="sns-btn-tooltip">
+                    <img src="./public/img/snsimg.png">
+                </p>
+                <div class="sns-login-area">
+                    <div class="btns kakao">
+                        <img src="./public/img/kakao.png" alt="카카오로그인">
+                        <label for="kakao-login"></label>
+                    </div>
+                    <div class="btns naver">
+                        <img src="./public/img/naver.png" alt="네이버로그인">
+                    </div>
+                    <div class="btns">
+                        <img src="./public/img/naver.png" alt="구글로그인">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 카카오 레이어 -->
+    <input type="checkbox" id="kakao-login">
+    <div id="layer">
+        <div id="content">
+            <div class="k-title">
+                <label id="close-button" for="kakao-login"></label>
+                <h1 class="tit-service">
+                    <span class="logo-k">
+                        <span class="ir-wa">Kakao</span>
+                    </span>
+                </h1>
+            </div>
+            <div class="k-main">
+                <div class="k-login">
+                    <div class="k-login-kakaomail">
+                        <form>
+                            <div class="item-form fst">
+                                <div class="box-tf">
+                                    <input type="text" id="k-login" name="k-login" placeholder="카카오메일 아이디, 이메일, 전화번호" class="tf-g">
+                                </div>
+                            </div>
+                            <div class="item-form">
+                                <div class="box-tf">
+                                    <input type="password" id="k-pw" name="k-pw" placeholder="비밀번호" class="tf-g">
+                                </div>
+                            </div>
+                            <div class="set-login">
+                                <div class="item-choice">
+                                    <span>
+                                        <input type="checkbox" id="k-savelogin">
+                                        <span class="ico-comm ico-check">간편로그인 정보 저장</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="k-btn">
+                                <button type="submit" class="btn-g highlight">로그인</button>
+                                <span class="line-or">
+                                    <span class="txt-or">또는</span>
+                                </span>
+                                <button type="button" class="btn-g">QR코드 로그인</button>
+                            </div>
+                        </form>
+                        <div class="k-info">
+                            <a href="" class="k-link-join">회원가입</a>
+                            <ul class="k-list">
+                                <li>
+                                    <a href="" class="k-link-user">계정 찾기</a>
+                                </li>
+                                <li>
+                                    <a href="" class="k-link-user2">비밀번호 찾기</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="k-footer">
+                <strong class="screen-out">서비스 이용정보</strong>
+                <div class="service-info">
+                    <a href="" class="k-link-info">이용약관</a>
+                    <a href="" class="k-link-info">
+                        <strong>개인정보 처리방침</strong>
+                    </a>
+                    <a href="" class="k-link-info">운영정책</a>
+                    <a href="" class="k-link-info">고객센터</a>
+                    <a href="" class="k-link-info">공지사항</a>
+                    <a href="" class="k-link-info">한국어</a>
+                </div>
+                <small class="txt-copyright">
+                    Copyright ©
+                    <a class="k-link-kakaocorp" href="http://kakaocorp.com/">Kakao Corp.</a>
+                    All rights reserved.
+                </small>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

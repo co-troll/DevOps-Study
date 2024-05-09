@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="date">
+</body>
+<script>
+    // sessionStorage.setItem("토큰", "데이터의 내용");
+
+    // 세션의 값을 호출
+    // 토큰의 키가 있으면 데이터를 홏울
+    // let token = sessionStorage.getItem("토큰");
+    // console.log(token);
+
+    // sessionStorage.clear();
+    // sessionStorage.removeItem("토큰");
+
+    localStorage.setItem("토큰", "데이터의 내용");
+
+    // localStorage.getItme("토큰");
+    // 객체를 문자열로 변환하면 object
+    // json 문자열로 변경
+    // "{name: 이순현}"
+    let obj = {name: "이순현"};
+    console.log(String(obj));
+
+    // 컴퓨터와 컴퓨터는 데이터를 주고받을때 문자열로 주고받아요
+    console.log(JSON.stringify(obj));
+    // 데이터를 보낼 준비
+    obj = JSON.stringify(obj);
+    // 데이터를 전달받은 서버
+    console.log(JSON.parse(obj));
+
+    let arr = [{name: "이순현"}, {name: "이경재"}]
+    localStorage.setItem("todo", JSON.stringify(arr));
+
+    let obj2 = localStorage.getItem("todo");
+    console.log(obj2);
+    obj2 = JSON.parse(obj2);
+    console.log(obj2);
+
+    // 실습 응용 todolist 만들어 보기
+
+    const day1 = new Date();
+const day2 = new Date(2024, 4, 30);
+
+console.log(day1);
+console.log(day2);
+    
+
+</script>
+</html>

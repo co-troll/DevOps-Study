@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 단항 산술 연산자 
+    let _num = 1;
+    let _num2 = 1;
+    let _num3 = _num + _num2;
+    console.log(++_num);
+    console.log(_num);
+    console.log(_num);
+
+    // 값을 호출하고 증가 할건지
+    // 값을 증가시키고 호출할건지
+
+    _num2 += 5;
+
+    // 비교 연산자
+    // 값은 true false
+    // 결과문을 boolean 타입으로 반환한다.
+
+    let a;
+    let b;
+    a = 1;
+    b = 2;
+
+    // === 은 데이터 타입까지 검사를 한다.
+    console.log(a == b);
+    console.log(true == false);
+
+    // 부정 연산자
+    // ! 
+    console.log(!true);
+
+    // 비교연산자 부정 연산자
+    console.log(a != b);
+
+    console.log(1 == true);
+    console.log(0 == false); 
+
+    // 변수를 선언하시고 50에 - 5씩 5번 빼면서 로그를 보여주시고 
+    // 25숫자 비교 문자열 25 비교를 비교연사자를 타입검사까지 하는거랑 타입 검사 안하고 비교하는거.
+    // 부정 연산자로 true와 false를 작성해보기
+
+    let num = 50;
+    for (let i = 0; i < 5; i++) {
+        num -= 5;
+        console.log(num);
+    }
+
+    let twentyfive = 25;
+    let twentyfivestr = "25";
+    console.log(twentyfive == twentyfivestr);
+    console.log(twentyfive === twentyfivestr);
+
+    console.log(!true);
+    console.log(!false);
+</script>
+</html>

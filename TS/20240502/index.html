@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .clickEvent {
+            width: 500px;
+            height: 500px;
+            background-color: beige;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .list {
+            width: 200px;
+            height: 50px;
+            background-color: chartreuse;
+        }
+        .wrap {
+            overflow-y: scroll;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="list">
+        리스트
+    </div>
+    <div class="wrap">
+        <div class="clickEvent">클릭</div>
+        <div class="clickEvent">클릭</div>
+        <div class="clickEvent">클릭</div>
+        <div class="clickEvent">클릭</div>
+        <div class="clickEvent">클릭</div>
+    </div>
+</body>
+<script>
+    /* const clickEv = document.querySelector(".clickEvent");
+    // 할당
+    clickEv.onclick = () => {
+        console.log("난 onclick");
+    }
+
+    // 배열에 추가
+    clickEv.addEventListener("click", () => {
+        console.log("나 클릭됨")
+    })
+    
+    // dir : 객ㅊ에를 로그 찍을때 좀더 자세히 로그를 확인하기 위해
+    console.dir(clickEv); */
+
+    /* function render() {
+        const _list = document.querySelector(".list");
+        const _ul = document.createElement("ul");
+        const _li = document.createElement("li");
+        _ul.append(_li);
+        _li.innerHTML = "첫번째 li 요소";
+
+        _li.addEventListener("click", () => {
+            console.log("클릭 됬음");
+        })
+
+        _list.append(_ul);
+    }
+    render();
+    render();
+    render();
+     */
+    const _list = document.querySelector(".list");
+    const clickEventHandler = () => {
+        console.log("나 클릭");
+    };
+    _list.addEventListener("click", clickEventHandler);XPathExpression
+
+    // click 이벤트에 등록된 clickEventHandler 함수를 제거한다.
+    _list.removeEventListener("click", clickEventHandler);
+
+    // 페이지의 로딩이 끝났을때
+    window.onload = () => {
+        // 로딩이 끝나기 전까지는 실행되지 않는다.
+    }
+
+    // 브라우저의 창의 크기가 바뀌면 실행되는 이벤트
+    window.onresize = (e) => {
+        console.log(e.target.innerWidth);
+    }
+
+    // scroll
+    // 요소에서 스크롤이 됬을때
+    const _wrap = document.querySelector(".wrap");
+    _wrap.onscroll = (e) => {
+        console.dir(e.target.scrollTop);
+    }
+
+    // 키보드 이벤트
+    // 키를 누르자 마자
+    window.onkeydown = () => {
+        console.log("키를 눌렀어")
+    }
+    // 키를 때면
+    window.onkeyup = () => {
+        console.log("키를 땠을때")
+    }
+    // 키를 누르고 있을때
+    window.onkeypress = () => {
+        console.log("키를 누르고 있을때")
+    }
+
+    // 클릭을 더블클릭 했을때
+    window.ondblclick = () => {
+        console.log("더블클릭 됬음")
+    }
+
+    // pc --------------------------------------------
+    // 클릭을 누르자 마자
+    window.onmousedown = () => {
+        console.log("마우스 클릭 누르면")
+    }
+
+    // 클릭을 땠을때
+    window.onmouseup = () => {
+        console.log("마우스 클릭을 때면")
+    }
+
+    window.onmousemove = () => {
+        console.log("마우스가 움직임")
+    }
+
+    // 요소에서 마우스가 나가면
+    _wrap.onmouseleave = () => {
+        console.log("마우스가 요소에서 나가면")
+    }
+
+    // 요소에 마우스가 올려지면
+    _wrap.onmouseenter = () => {
+        console.log("마우스가 요소 위로 올라가면")
+    }
+    // pc --------------------------------------------
+
+    window.ontouchstart = () => {
+        console.log("모바일 터치가 됬을때")
+    }
+
+    window.ontouchend = () => {
+        console.log("모바일 터치가 끝났을때")
+    }
+</script>
+</html>

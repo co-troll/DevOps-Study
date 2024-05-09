@@ -1,0 +1,14 @@
+{
+  // 와일드 카드
+  // css *
+  // /* : 모든 파일을 포함한다.
+  // /** : 모든 폴더를 포함시키겠다.
+
+  "include": ["src/**/*"],
+  "exclude": ["**/*.test.ts"],
+  "compilerOptions": {
+    "target": "ES6",
+    "outDir": "./dist", // distribution의 약자 배포하다. 정하는 이름
+    "removeComments": true,
+  }
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 1. 로또는 겹치는 숫자가 나오면 안됨.
+    // 2. 숫자는 6개를 뽑아야 한다.
+    // 3. 나온 숫자들을 리스트 형태로 보여줘야 함.
+
+    // 로또 번호들이 들어갈 로또 박스 45개
+    const lottoNum = [];
+
+    // 로또 구슬을 뽑아서 담아놓을 정답 배열
+    const result = [];
+
+    // 추첨 전에 세팅
+    // 초기화 단계
+    function lottoInit() {
+        for (let i = 1; i <= 45; i++) 
+            lottoNum.push(i);
+        console.log("세팅 끝남");
+    }
+
+    function play() {
+        for (let i = 0; i < 6; i++) {
+            let randomIndex = parseInt(Math.random() * lottoNum.length);
+            
+            let number = lottoNum[randomIndex];
+            // splice 원본 배열의 값을 제거하는데 
+            // 첫번째 인자가 시작 인덱스
+            // 두번째 인자 값은 갯수
+            lottoNum.splice(randomIndex, 1);
+            result.push(number);
+        }
+    }
+
+    function main() {
+        lottoInit();
+        play();
+        console.log("로또의 결과는?", result);
+    }
+
+    main();
+</script>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 일반 형제 선택자 */
+        div > p~a {
+            color: aqua;
+        }
+        /* 인접 형제 선택자 */
+        p+a {
+            color: red;
+        }
+
+        #tab_menu > input {
+            display: none;
+        }
+        #tab_menu > input + label {
+            display: inline-block;
+            padding: 20px;
+            background-color: darkgray;
+            color: gray;
+            font-size: 14px;
+            /* 마우스를 올렸을때 커서가 변경되는 효과 클릭할 수 있는 요소라는 인터렉션 */
+            cursor: pointer;
+        }
+
+        /* 직계 자식 요소 checked 속성이 있는 input 요소의 인접 형제 label에게 스타일 적용 */
+        #tab_menu > input:checked + label {
+            background-color: lightgray;
+            color: black;
+        }
+
+        .box {
+            width: 500px;
+            height: 600px;
+            background-color: aliceblue;
+            margin: 0 auto;
+            display: none;
+        }
+
+        /* 속성 선택자 */
+        /* checked 속성과 id가 tab01인 요소를 선택하고 싶을때 */
+        input[id="tab01"]:checked ~ .con1 {
+            display: block;
+        }
+        input[id="tab02"]:checked ~ .con2 {
+            display: block;
+        }
+        input[id="tab03"]:checked ~ .con3 {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>인접 형제 선택자</p>     
+    </div>
+    <a href="">인접 형제</a>
+    <div></div>
+
+    <div id="tab_menu">
+        <!-- name="tabmenu" name == 요청 보낼때 어떤 데이터를 어떤 키로 보낼지 -->
+        <!-- input에 같은 name을 가지고 있으면 누가 체크되어있는지 값을 확인한다. -->
+        <!-- label의 for에는 해당 input의 id가 들어가야 한다. -->
+        <!-- label의 for에 작성한 id에 맞는 input을 상호 작용한다. -->
+        <input type="radio" id="tab01" name="tabmenu" checked>
+        <label for="tab01">탭 1</label>
+        <input type="radio" id="tab02" name="tabmenu">
+        <label for="tab02">탭 2</label>
+        <input type="radio" id="tab03" name="tabmenu">
+        <label for="tab03">탭 3</label>
+
+        <div class="box con1">1번 탭</div>
+        <div class="box con2">2번 탭</div>
+        <div class="box con3">3번 탭</div>
+    </div>
+</body>
+</html>
