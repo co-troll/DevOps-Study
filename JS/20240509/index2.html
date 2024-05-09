@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const increase = (num) => {
+        return new Promise((res, rej) => {
+            setTimeout(() => {
+                try {
+                    if(num % 3 == 0) throw new Error(num);
+                        console.log(num);
+                        num++;
+                        res(num);
+                    } catch (e) {
+                        console.log(e.message)
+                        rej(e.message);
+                    }
+            }, 1000)   
+        });
+    }
+    
+    // increase(1).then((n) => increase(n)).then((n) => increase(n)).then((n) => increase(n)).then((n) => increase(n))
+    // .catch((n) => { console.log(n); return Number(n) + 1; }).then((n) => increase(n)).then((n) => increase(n)).then((n) => increase(n)).then((n) => increase(n))
+    // .catch((n) => { console.log(n); return Number(n) + 1; }).then((n) => increase(n)).then((n) => increase(n)).then((n) => increase(n)).then((n) => increase(n))
+    // .catch((n) => { console.log(n); return Number(n) + 1; })
+
+    async function fn() {
+        let num = await increase(1);
+        while(true) {
+            try {
+                num = await increase(num);
+            } catch (e) {
+                num = Number(e) + 1;  
+            }
+            if (num == 10) break
+        }
+    }
+    fn();
+</script>
+</html>
