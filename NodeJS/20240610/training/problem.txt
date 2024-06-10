@@ -1,0 +1,18 @@
+1.
+라우팅 처리를 하고
+
+user
+  login
+  signup
+  info
+board
+  main
+  list
+  write
+cart
+  main
+  add
+
+2. 
+서버 측에서 html 페이지를 완성시켜서 보여주는데
+게시판의 형태를 보여주자 10개 정도

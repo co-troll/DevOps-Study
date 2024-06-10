@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <ul>
+        <li class="no">번호</li>
+        <li class="title">제목</li>
+        <li class="author">저자</li>
+        <li class="views">조회수</li>
+        </ul>
+    <div>
+        <% boardList.forEach((v, i) => { %>
+            <ul>
+                <li class="no"><%= v.no %></li>
+                <li class="title"><%= v.title %></li>
+                <li class="author"><%= v.author %></li>
+                <li class="views"><%= v.views %></li>
+            </ul>
+        <% }) %>
+    </div>
+</body>
+</html>
