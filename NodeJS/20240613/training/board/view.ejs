@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰 페이지</title>
+</head>
+<body>
+    <div>
+        <label for="">제목</label>
+        <div><%= title %></div>
+        <label for="">내용</label>
+        <div><%= content %></div>
+        <% let modifyLink = `/modify/${no}`%>
+        <% let deleteLink = `/delete/${no}`%>
+        <a href=<%= modifyLink %>>수정</a>
+        <a href=<%= deleteLink %>>삭제</a>
+    </div>
+</body>
+</html>
