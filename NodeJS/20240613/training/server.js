@@ -65,7 +65,7 @@ app.post("/modify/:no", (req, res) => {
 })
 
 app.get("/delete/:no", (req, res) => {
-    mysqlConnect.query("DELETE FROM board WHERE no = ?", [ req.params.no ], (err, data) => {
+    mysqlConnect.query("DELETE FROM board WHERE no = ?; SET @CNT = 0; UPDATE board SET no = @CNT:=@CNT+1; ALTER TABLE board AUTO_INCREMENT = 1;", [ req.params.no ], (err, data) => {
         res.redirect("/list");
     })
 })

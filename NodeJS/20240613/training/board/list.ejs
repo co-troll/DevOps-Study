@@ -13,10 +13,9 @@
             <li class="views">조회수</li>
         </ul>
         <% data.forEach((el) => { %>
-            <% let link = `/view/${el.no}` %>
             <ul>
                 <li class="no"><%= el.no %></li>
-                <li class="no"><a href= <%= link %>><%= el.title %></a></li>
+                <li class="no"><a href="/view/<%= el.no %>"><%= el.title %></a></li>
                 <li class="no"><%= el.views %></li>
             </ul>
         <% }) %>

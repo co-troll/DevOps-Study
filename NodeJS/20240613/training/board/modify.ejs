@@ -6,8 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <% let modifyLink = `/modify/${no}`%>
-    <form action=<%= modifyLink %> method="post">
+    <form action="/modify/<%= no %>" method="post">
         <label for="">제목</label>
         <input type="text" name="title" value=<%= title %>>
         <label for="">내용</label>
