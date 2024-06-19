@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+     <div>메인페이지</div>
+     <img src="http://127.0.0.1:3000/img/dog_1718769998066.jpg">
+     <input type="text" id="imgs">
+     <input type="file" id="file">
+     <button id="uploadBtn">전송</button>
+</body>
+<script>
+    uploadBtn.onclick = (e) => {
+        const form = new FormData();
+        form.append("img", imgs.value);
+        form.append("upload", file.files[0]);
+
+        axios.post("http://127.0.0.1:3000/upload", form, {
+            "Content-Type": "multipart/form-data"
+        }).then((e) => {
+            console.log(e);
+            console.log("잘 업로드 됐어");
+        }).catch((e) => console.log(e));
+    }
+</script>
+</html>
