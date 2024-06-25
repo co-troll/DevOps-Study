@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO LIST</title>
+    <link rel="stylesheet" href="/todo/main.css">
+</head>
+<body>
+    <div id="main">
+        
+        <h1 id="todoTitle">TODO LIST</h1>
+        <ul id="todoList">
+            <% data.forEach((todoObj) => { %>
+                <li class="todoTab" data-index="<%= todoObj.id %>">
+                    <input type="checkbox" class="todoCheck" id="todoCheck1">
+                    <label for="todoCheck1"></label>
+                    <img class="todoImg" src="/uploads/<%= todoObj.img %>" alt="">
+                    <div class="todoContent"><%= todoObj.content %></div>
+                    <div class="todoDDay"><%= todoObj.dday.substr(5, 9) %></div>
+                    <div class="todoContextMenu"></div>
+                </li>
+            <% }) %>
+            <!-- <li class="todoTab" data-index="1">
+                <input type="checkbox" class="todoCheck" id="todoCheck1">
+                <label for="todoCheck1"></label>
+                <img class="todoImg" src="/uploads/OIP.jpg" alt="">
+                <div class="todoContent">내용1</div>
+                <div class="todoDDay">07-12</div>
+                <div class="todoContextMenu"></div>
+            </li>
+            <li class="todoTab" data-index="2">
+                <input type="checkbox" class="todoCheck" id="todoCheck2">
+                <label for="todoCheck2"></label>
+                <img class="todoImg" src="" alt="">
+                <div class="todoContent">내용2</div>
+                <div class="todoDDay">07-20</div>
+                <div class="todoContextMenu"></div>
+            </li> -->
+        </ul>
+        <div id="todoNewTab">
+            <div id="todoCount">task <%= data.length %></div>
+            <div id="todoNew" onclick="popupClick('add');">ADD NEW +</div>
+        </div>
+    </div>
+    <form id="popup" action="/post" method="post" enctype="multipart/form-data">
+        <h1 id="popupTitle">리스트 작성</h1>
+        <div id="popupContent">
+            <label id="popupLabel" for="">내용</label>
+            <input type="text" name="content" id="popupInput">
+            <div>
+                <input type="file" name="image" class="popupImage" id="popupImage">
+                <label for="popupImage">이미지 업로드</label>
+                <input type="date" name="dday" id="popupDate">
+                <button id="popupBtn">작성</button>
+            </div>
+        </div>
+        <div id=popupFooter>
+            <div id=""></div>
+            <div id="popupExit">EXIT</div>
+        </div>
+    </form>
+    <div id="contextMenu">
+        <div id="contextModify" style="cursor: pointer;" onclick="popupClick('modify');">수정</div>
+        <div id="contextDelete" style="cursor: pointer;" onclick="popupClick('delete');">삭제</div>
+    </div>
+</body>
+<script src="/todo/main.js"></script>
+</html>

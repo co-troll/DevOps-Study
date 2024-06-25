@@ -1,6 +1,7 @@
 {
-  "name": "20246024",
+  "name": "20240625-toy-project",
   "version": "1.0.0",
+  "description": "- mysql 사용\r - 이미지 파일 업로드",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,10 +10,11 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "ejs": "^3.1.10",
     "express": "^4.19.2",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.10.1",
     "socket.io": "^4.7.5"
   }
 }
