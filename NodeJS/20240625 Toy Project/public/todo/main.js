@@ -4,6 +4,10 @@ document.addEventListener("click", () => {
     contextMenu.style.display = "none";
 })
 
+let date = new Date();
+let today = `${date.getFullYear()}-${((date.getMonth() + 1) < 9)? "0" + (date.getMonth() + 1): date.getMonth + 1}-${(date.getDate() < 9)? "0" + date.getDate(): date.getDate()}`
+popupDate.setAttribute("min", today);
+
 todoTabList?.forEach((todoTab) => {
     todoTab.addEventListener("contextmenu", (e) => {
         e.preventDefault();
@@ -15,6 +19,10 @@ todoTabList?.forEach((todoTab) => {
         contextMenu.dataset.index = target;
     })
 })
+
+const todoCheck = (index) => {
+    location.href = `/todo/check/${index}`
+}
 
 const popupClick = (type) => {
     switch (type) {

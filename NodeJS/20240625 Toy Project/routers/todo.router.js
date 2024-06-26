@@ -1,4 +1,4 @@
-const { getTODOAll, insertTODO, modifyTODO, deleteTODO, upload } = require("../controllers/todo.controller");
+const { getTODOAll, insertTODO, modifyTODO, deleteTODO, checkTODO, upload } = require("../controllers/todo.controller");
 const router = require("express").Router();
 
 router.get("/", async (req, res) => {
@@ -25,6 +25,12 @@ router.post("/modify/:index", upload.single("image"), async (req, res) => {
 router.get("/delete/:index", async (req, res) => {
     const { index } = req.params;
     await deleteTODO(index);
+    res.redirect("/todo");
+})
+
+router.get("/check/:index", async (req, res) => {
+    const { index } = req.params;
+    await checkTODO(index);
     res.redirect("/todo");
 })
 

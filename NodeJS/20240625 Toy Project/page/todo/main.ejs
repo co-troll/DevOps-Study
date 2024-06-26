@@ -13,8 +13,8 @@
         <ul id="todoList">
             <% data.forEach((todoObj) => { %>
                 <li class="todoTab" data-index="<%= todoObj.id %>">
-                    <input type="checkbox" class="todoCheck" id="todoCheck1">
-                    <label for="todoCheck1"></label>
+                    <input type="checkbox" class="todoCheck" id="todoCheck1" <%= (todoObj.checked ? "checked": "") %>>
+                    <label for="todoCheck1" onclick="todoCheck('<%= todoObj.id %>')"></label>
                     <img class="todoImg" src="/uploads/<%= todoObj.img %>" alt="">
                     <div class="todoContent"><%= todoObj.content %></div>
                     <div class="todoDDay"><%= todoObj.dday.substr(5, 9) %></div>
@@ -50,7 +50,7 @@
             <input type="text" name="content" id="popupInput">
             <div>
                 <input type="file" name="image" class="popupImage" id="popupImage">
-                <label for="popupImage">이미지 업로드</label>
+                <label for="popupImage" style="cursor: pointer;">이미지 업로드</label>
                 <input type="date" name="dday" id="popupDate">
                 <button id="popupBtn">작성</button>
             </div>

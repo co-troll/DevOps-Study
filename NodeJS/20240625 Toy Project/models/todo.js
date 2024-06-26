@@ -58,7 +58,7 @@ const todo = {
     },
     deleteTODO: async (id) => {
         try {
-            await mysql.query("DELETE FROM todo WHERE id = ?;", [id]);
+            await mysql.query("DELETE FROM todo WHERE id = ?; ALTER TABLE todo AUTO_INCREMENT = 1; SET @COUNT = 0; UPDATE todo SET id = @COUNT:=@COUNT+1;", [id]);
             console.log("delte TODO");
         } catch (error) {
             console.log("model: deleteTODO error");

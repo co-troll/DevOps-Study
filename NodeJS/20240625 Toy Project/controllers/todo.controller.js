@@ -40,4 +40,20 @@ exports.deleteTODO = async (id) => {
     }
 }
 
+exports.checkTODO = async (id) => {
+    try {
+        const { checked } = await todo.getTODO(id);
+        switch (checked) {
+            case 1:
+                await todo.checkTODO(id, 0);
+                break;
+            case 0:
+                await todo.checkTODO(id, 1);
+                break;
+        }
+    } catch (error) {
+        console.log("controller: todo checkTODO error");
+    }
+}
+
 exports.upload = upload;
