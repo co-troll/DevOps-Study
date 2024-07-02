@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판 페이지</title>
+</head>
+<body>
+    <h1>게시판</h1>
+    <% boards.forEach((board) => { %>
+        <ul>
+            <li>제목 : <%= board.title %></li>
+            <li>내용 : <%= board.content %></li>
+            <li>저자 : <%= board.author %></li>
+            <button type="button" onclick="location.href = '/board/modify/<%= board.id %>';">수정</button>
+            <button type="button" onclick="location.href = '/board/delete/<%= board.id %>';">삭제</button>
+        </ul>
+    <% }) %>
+    <button type="button" onclick="location.href = '/board/write';">글 쓰기</button>
+    <button type="button" onclick="location.href = '/mypage';">마이페이지</button>
+</body>
+<script>
+    const modify = (id) => {
+        location.href
+    }
+</script>
+</html>

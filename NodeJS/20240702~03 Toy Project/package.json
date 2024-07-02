@@ -1,0 +1,24 @@
+{
+  "name": "20240702~03-toy-project",
+  "version": "1.0.0",
+  "description": "- MVC 패턴 (DI, IOC)\r - mysql 사용, sequelize\r - 이미지 파일 업로드\r - 회원가입 로그인\r - 로그인 유지",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.10.2",
+    "sequelize": "^6.37.3"
+  }
+}
