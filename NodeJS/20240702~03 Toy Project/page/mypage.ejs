@@ -4,24 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>마이페이지</title>
+    <style>
+        #container {
+            margin: 0 auto;
+            width: 500px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        #form > input {
+            margin-bottom: 5px;
+        }
+        #form > img {
+            margin: 0 auto;
+            object-fit: cover;
+        }
+        #img {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #btn {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        input {
+            width: 250px;
+            height: 30px;
+            margin-top: 3px;
+            padding: 3px 6px;
+            box-sizing: border-box;
+        }
+        button {
+            margin: 0;
+            padding: 3px 6px;
+            box-sizing: border-box;
+            width: 100px;
+            height: 30px;
+        }
+    </style>
 </head>
 <body>
-    <h1>마이페이지</h1>
-    <form method="post">
-        <label for="">아이디 : <%= data.id %></label>
-        <label for="">이름</label>
-        <input type="text" name="name" value=<%= data.name %>>
-        <br>
-        <label for="">프로필 이미지</label>
-        <br>
-        <img style="width: 100px; height: 100px;" alt="" src=<%= data.img %>>
-        <br>
-        <input type="file" name="image" id="popupImage" style="display: none;">
-        <label for="popupImage" style="cursor: pointer; border: 1px solid;">이미지 업로드</label>
-        <br>
-        <label for="">비밀번호</label>
-        <input type="password" name="pw">
-        <button>회원 수정</button>
-    </form>
+    <div id="container">
+        <h1>마이페이지</h1>
+        <form method="post" enctype="multipart/form-data" id="form">
+            <label for="" style="margin-bottom: 5px;">아이디 : <%= data.id %></label>
+            <label for="">이름</label>
+            <input type="text" name="name" value=<%= data.name %>>
+            <br>
+            <label for="">프로필 이미지</label>
+            <br>
+            <img style="width: 100px; height: 100px;" alt="" src="/uploads/<%= data.img %>">
+            
+            <br>
+            <div id="img">
+                <input type="file" name="image" id="image" style="display: none;">
+                <label for="image" style="cursor: pointer; border: 1px solid;">이미지 업로드</label>
+
+            </div>
+            <br>
+            <label for="">비밀번호</label>
+            <input type="password" name="pw">
+            <div id="btn">
+                <button>회원 수정</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>

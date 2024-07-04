@@ -1,5 +1,7 @@
 const UserRepository = require("../repository/user.repository");
 const bcrypt = require("../model/lib/bycypt");
+const fs = require("fs");
+const path = require("path");
 
 class UserService {
     /** @param {UserRepository} userRepository  */
@@ -46,7 +48,9 @@ class UserService {
         try {
             let changeImg = img;
             const user = await this.userRepository.findUserById(id);
-            if (!img)
+            if (img)
+                fs.unlinkSync(path.join(__dirname, "../public/uploads", user.img));
+            else 
                 changeImg = user.img;
             const compare = await bcrypt.compare(pw, user.pw);
             if (!compare) 

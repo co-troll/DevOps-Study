@@ -4,20 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>게시판 페이지</title>
+    <style>
+        #container {
+            margin: 0 auto;
+            width: 1000px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        ul ,li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        button {
+            margin: 0;
+            padding: 3px 6px;
+            box-sizing: border-box;
+            width: 100px;
+            height: 30px;
+        }
+
+        #form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        #form > li {
+            text-align: center;
+            height: 30px;
+            box-sizing: border-box;
+            border: 1px solid;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .title {
+            width: 16%;
+        }
+        .content {
+            width: 55%;
+        }
+        .author {
+            width: 15%;
+        }
+        .modify, .delete {
+            width: 12%;
+            
+        }
+
+        li > button {
+            border: 0;
+            background-color: transparent;
+            cursor: pointer;
+            margin: auto 0;
+        }
+
+        #form > input {
+            margin-bottom: 5px;
+        }
+        #btn {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>게시판</h1>
-    <% boards.forEach((board) => { %>
-        <ul>
-            <li>제목 : <%= board.title %></li>
-            <li>내용 : <%= board.content %></li>
-            <li>저자 : <%= board.author %></li>
-            <button type="button" onclick="location.href = '/board/modify/<%= board.id %>';">수정</button>
-            <button type="button" onclick="location.href = '/board/delete/<%= board.id %>';">삭제</button>
+    <div id="container">
+        <h1>게시판</h1>
+        <ul id="form">
+            <li class="title">제목</li>
+            <li class="content">내용</li>
+            <li class="author">저자</li>
+            <li class="modify">수정</li>
+            <li class="delete">삭제</li>
         </ul>
-    <% }) %>
-    <button type="button" onclick="location.href = '/board/write';">글 쓰기</button>
-    <button type="button" onclick="location.href = '/mypage';">마이페이지</button>
+        <% boards.forEach((board) => { %>
+            <ul id="form">
+                <li class="title"><%= board.title %></li>
+                <li class="content"><%= board.content %></li>
+                <li class="author"><%= board.author %></li>
+                <li class="modify"><button type="button" onclick="location.href = '/board/modify/<%= board.id %>';">수정</button></li>
+                <li class="delete"><button type="button" onclick="location.href = '/board/delete/<%= board.id %>';">삭제</button></li>
+            </ul>
+        <% }) %>
+        <div id="btn">
+            <button style="margin-right: 10px;" type="button" onclick="location.href = '/board/write';">글 쓰기</button>
+            <button type="button" onclick="location.href = '/mypage';">마이페이지</button>
+        </div>
+    </div>
 </body>
 <script>
     const modify = (id) => {

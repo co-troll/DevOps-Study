@@ -9,6 +9,8 @@ class UserController {
 
     login = async (req, res) => {
         const { id, pw } = req.body;
+        if (!id || !pw)
+            return;
         const [ name, msg ] = await this.userService.login(id, pw, res);
         if (!name) 
             return res.send(`<script>alert("${msg}"); location.href = "/login"</script>`); 
@@ -16,7 +18,7 @@ class UserController {
             type: "JWT",
             name: {id, name}
         }, process.env.KEY, {
-            expiresIn: "10m",
+            expiresIn: "30m",
             issuer: "server"
         });
         const data = jwt.verify(token, process.env.KEY);
@@ -26,6 +28,8 @@ class UserController {
 
     signUp = async (req, res) => {
         const { id, pw, name } = req.body;
+        if (!id || !pw || !name)
+            return;
         const [ check, msg ] = await this.userService.signUp(id, pw, name);
         if (!check) 
             return res.send(`<script>alert("${msg}"); location.href = "/signup"</script>`); 
@@ -41,7 +45,6 @@ class UserController {
     modifyUser = async (req, res) => {
         const id = req.cookies.user.name.id;
         const { name, pw } = req.body;
-        console.log(req.file);
         const { filename } = req.file || "";
         const [ check, msg ] = await this.userService.modifyUser(id, pw, name, filename);
         if (!check) 

@@ -20,6 +20,8 @@ class BoardController {
 
     insertBoard = async (req, res) => {
         const { title, content } = req.body;
+        if (!title || !content)
+            return;
         const { name } = req.cookies.user;
         await this.BoardService.insertBoard(title, content, name.name, name.id);
         res.send(`<script>alert("작성 완료"); location.href = "/board"</script>`); 
