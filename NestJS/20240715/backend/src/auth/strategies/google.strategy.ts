@@ -1,24 +1,18 @@
-import { UnauthorizedException } from "@nestjs/common";
+import { Injectable, UnauthorizedException } from "@nestjs/common";
 import { AuthStrategy } from "./auth.strategy";
 import axios from "axios";
 import { ConfigService } from "@nestjs/config";
 
+@Injectable()
 export class GoogleStrategy implements AuthStrategy {
-  CLIENT_ID: string;
-  CLIENT_SECRET: string;
-  REDIRECT_URI: string;
-  constructor(private configService: ConfigService) {
-    this.CLIENT_ID = this.configService.get<string>("GOOGLE_CLIENT_ID");
-    this.CLIENT_SECRET = this.configService.get<string>("GOOGLE_CLIENT_SECRET");
-    this.REDIRECT_URI = this.configService.get<string>("GOOGLE_CALLBACK_URL");
-  }
+  constructor(private configService: ConfigService) {}
   async validate(code: string): Promise<any> {
     try {
       const { data: { access_token } } = await axios.post("https://oauth2.googleapis.com/token", {}, {
         params: {
-          client_id: this.CLIENT_ID,
-          client_secret: this.CLIENT_SECRET,
-          redirect_uri: this.REDIRECT_URI,
+          client_id: this.configService.get<string>("GOOGLE_CLIENT_ID"),
+          client_secret: this.configService.get<string>("GOOGLE_CLIENT_SECRET"),
+          redirect_uri: this.configService.get<string>("GOOGLE_CALLBACK_URL"),
           grant_type: "authorization_code",
           code
         }
@@ -33,6 +27,7 @@ export class GoogleStrategy implements AuthStrategy {
       console.log(userData);
       return userData;
     } catch (error) {
+      console.log(error);
       throw new UnauthorizedException("구글 인증 실패")
     }
   }

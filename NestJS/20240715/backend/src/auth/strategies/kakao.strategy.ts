@@ -1,8 +1,9 @@
 import axios from "axios";
 import { AuthStrategy } from "./auth.strategy";
-import { UnauthorizedException } from "@nestjs/common";
+import { Injectable, UnauthorizedException } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 
+@Injectable()
 export class KakaoStrategy implements AuthStrategy {
   constructor(private configService: ConfigService) {}
   async validate(code: string): Promise<any> {
