@@ -66,6 +66,9 @@
 > RDS AWS에서 제공하느 서비스가 있는데 비용이 비쌈
 
 ```sh
+# 연결 
+ssh -i "studykey.pem" ubuntu@ec2-3-39-224-170.ap-northeast-2.compute.amazonaws.com
+
 # 리눅스 배포판 업데이트 최신화
 sudo apt-get update
 

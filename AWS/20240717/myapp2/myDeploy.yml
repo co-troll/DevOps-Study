@@ -1,0 +1,69 @@
+# name: GitHub Actions Demo
+# run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+# on: [push]
+# jobs:
+#   Explore-GitHub-Actions:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+#       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+#       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+#       - name: Check out repository code
+#         uses: actions/checkout@v4
+#       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+#       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+#       - name: List files in the repository
+#         run: |
+#           ls ${{ github.workspace }}
+#       - run: echo "🍏 This job's status is ${{ job.status }}."
+
+# name: CI/CD 구축
+
+# # 이벤트를 구독
+# on: 
+#   push: # push 이벤트가 발생하면 실행
+#     branches: # push가 발생할 브랜치가 뭐일때 실행할지
+#       - main
+# jobs: # 작업의 단위
+#   myTest: #식별자 이름(우리가 이름 정해도 됨)
+#     runs-on: ubuntu-latest # 사용한 운영체제
+
+#     # 작업의 가장 작은 단위
+#     steps: 
+#       - name: shell console test # 가장 작은 작업 단위의 이름
+#         run: echo "my ci/cd" # 작업에서 실행할 쉡 스크립트 내용 echo 출력 명령어
+
+#       - name: mykey # 이름은 mykey
+#         run: echo ${{ secrets.HOST }}
+  
+# name: CI/CD 구축
+
+# on:
+#   push:
+#     branches:
+#       - main
+
+# jobs:
+#   Deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: checkout
+#         uses: actions/checkout@v4 # uses 사용할 라이브러리
+
+#       - name: ssh key
+#         uses: webfactory/ssh-agent@v0.5.3
+#         with: # 작성할 속성을 정의
+#           ssh-private-key: ${{ secrets.AWS_SECRET_KEY }}
+
+#       - name: ssh ec2 접속
+#         uses: appleboy/ssh-action@v1.0.3
+#         with:
+#           key: ${{ secrets.AWS_SECRET_KEY }}
+#           host: ${{ secrets.HOST }}
+#           username: ${{ secrets.USERNAME }}
+#           port: ${{ secrets.PORT }}
+#           script: | # 실행할 스크립트
+#             cd /home/ubuntu/study
+#             git pull origin main
+#             pm2 kill
+#             npm start
