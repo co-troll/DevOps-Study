@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리액트 라이브러리</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+<script type="text/babel">
+    // class 컴포넌트
+    class LoginBtn extends React.Component {
+        constructor(props) {
+            // 부모 생성자 호출
+            super(props);
+            // 이렇게 해야 변수내요을 사용하수 있음 생성자 안에서
+            this.state = {
+                isLogin: false,
+                a: 1
+            }
+        }
+
+        // jsx 문법에서 html영역에 {} 중괄호를 사요아면 javascript를 사용하겠다.
+        // reactDOM
+        // onClick 대문자로 변경 on 뒤에
+        // onCLick 이런 이벤트에는 {} 실행식을 넣으면 반환값이 할당되는것.(한번 호출됨)
+        // onClick 클릭 될때마다 호출해야하니 함수의 값
+        // setState 상태를 전환할때 꼭 이 메서드로 변경해야 한다.
+
+        // state는 이전 내용이 보관되어 있고 다시 리렌더링할때 이전값을 가져와서 할당해준다.
+        render() {
+            return (
+                <div>
+                    <div>
+                        <button onClick={() => { this.setState({ isLogin: !this.state.isLogin }) }}>{this.state.isLogin? "LogOut": "Login"}</button>
+                    </div>
+                    이건 일반 변수 : {this.state.a}
+                    <button onClick={() => { this.setState({a: this.state.a + 1})}}>증가</button>
+                </div>
+            )
+        }
+    }
+
+    const root = ReactDOM.createRoot(document.querySelector("#root"));
+    root.render(
+        <LoginBtn />
+    )
+</script>
+</html>   

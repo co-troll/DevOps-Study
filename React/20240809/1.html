@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리액트 따라가기</title>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+<script>
+    // react는 선택자를 사용안하고 작성할수 있는데
+    // 최초에 한번은 선택자를 사용한다.
+
+    const root = document.querySelector("#root");
+
+    // 컴포넌트로 제작할 예정
+    const button = document.createElement("button");
+
+    button.addEventListener("click", (e) => {
+        if (e.target.innerHTML !== "logOut") {
+            e.target.innerHTML = "logOut";
+        } else {
+            e.target.innerHTML = "login";
+        }
+    })
+
+    button.innerHTML = "버튼";
+    root.append(button);
+</script>
+</html>
