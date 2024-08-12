@@ -109,5 +109,5 @@ npm install -D webpack webpack-cli css-loader style-loader
 ## webpack jsx babel 설정
 ```sh
 # jsx -> js babel 변환 html 생성
-npm install -D webpack webpack-cli @babel/core @babel/preset-env @babel/preset-react babel-loader react react-dom
+npm install webpack webpack-cli @babel/core @babel/preset-env @babel/preset-react babel-loader html-webpack-plugin react react-dom
 ```
