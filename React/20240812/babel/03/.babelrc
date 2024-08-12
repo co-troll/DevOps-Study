@@ -1,0 +1,5 @@
+{
+    "presets": ["@babel/preset-env", "@babel/preset-react"]
+}
+// 일반적으로 리액트 프로젝트에 위의 두가지 속성이 정의 되어 있다.
+// jsx를 브라우저가 이해할수 있는 수준의 자바스크립트로 변환
