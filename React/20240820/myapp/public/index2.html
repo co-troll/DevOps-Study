@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 메모이제이션 기법
+    // 컴퓨터 프로그램이 동일한 계산을 반복할때
+    // 이전 값을 메모리에 저장한다. 그래서 동일한 연산이 되지 않도록
+
+    // 숫자를 전닳을 하고
+    // 콜스택이 터진다. 동일한 연산도 처리르 하는 경우
+    const Memo = (n) => {
+        return str(n);
+    }
+
+    // 이전 값을 메모리에 저장할 공간
+    let memo = {};
+    // 메모이제이션 기법을 사용해서 최소한의 연산을 동작하게
+    const _Memo = () => {
+        let result;
+
+        // key값이 있는지 확인
+        // 했던 연산인지 확인
+        if (n in memo) {
+            // key값이 있으면 이전에 했떤 동일한 연산이니
+            result = memo[n]
+        } else {
+            result = str(n);
+            // 메모리에 이전에 햇떤 연산을 기록
+            memo[n] = result;
+        }
+
+    }
+
+    // 피보나치 수열을 구하는 함수
+    const str = (n) => {
+        return n;
+    }
+</script>
+</html>
